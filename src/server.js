@@ -12,7 +12,9 @@ import { notFound, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 
@@ -20,7 +22,7 @@ app.use(morgan('dev'));
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 // health
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+// app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 // routes
 app.use('/api/auth', authRoutes);
