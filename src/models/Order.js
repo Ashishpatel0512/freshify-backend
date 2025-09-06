@@ -19,7 +19,7 @@ const orderSchema = new mongoose.Schema({
   total: { type: Number, required: true, min: 0 },
   status: { type: String, enum: ['Pending', 'Processing', 'Delivered'], default: 'Pending' },
   paymentMethod: { type: String, enum: ['COD'], default: 'COD' },
-  location: { type: locationSchema, required: true }   // ✅ Added Location info
+  // location: { type: locationSchema, required: true }   // ✅ Added Location info
 }, { timestamps: true });
 
 export default mongoose.model('Order', orderSchema);
